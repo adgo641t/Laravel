@@ -10,7 +10,7 @@
     </head>
     
     <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,6 +31,10 @@
               <a class="nav-link" href="/ShowGame">Show Game</a>
             </li>
           </ul>
+          <form action="https://www.google.com/search?" method="get" class="my-5 my-lg-0" >
+            <input class="form-control width:30px" type="text" placeholder="Search" id="search" name="q" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
         </div>
       </nav>
         @yield('content')
