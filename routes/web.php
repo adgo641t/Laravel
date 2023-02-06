@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Request\LoginRequest;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +24,9 @@ Route::get('/', [PostController::class, 'index'])->name('welcome');
 Route::get('/login', function () {
     return view('login');
 });
+
+//Route::get('/login', [PostController::class,'login'])->name('login');
+
 
 Route::get('/logout', function () {
     return view('logout');

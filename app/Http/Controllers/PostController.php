@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ShowGame;
+use App\Models\User;
+use App\Http\Requests\LoginRequest;
+
+
 
 class PostController extends Controller
 {
@@ -30,8 +34,24 @@ class PostController extends Controller
        return view('welcome', compact('GameCreators', 'WebDevelopers'));
     }
 
+    public function login(LoginRequest $request){
+        $credential = $request->validated();
+
+        $mail = $request->old('email');
+        $password = $request->old('password');
+        
+        $UserDb = User::all();
+
+        dump($mail,$password);
+
+        //return view('login');
+
+    }
+
     public function ShowTable(){
         $dataTable = ShowGame::all();
         return view('ShowGame', compact('dataTable'));
     }
+
+
 }

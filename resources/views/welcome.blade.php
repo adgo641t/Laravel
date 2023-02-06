@@ -21,4 +21,5 @@
     <li>Name: {{$WebDeveloper['Name']}}</li>
     <li>Description: {{$WebDeveloper['Description']}}</li>
 @endforeach
+
 @endsection
