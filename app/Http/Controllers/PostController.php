@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\support\Facades\Auth;
 use App\Models\ShowGame;
 use App\Models\User;
 use App\Http\Requests\LoginRequest;
 
 
 
+
 class PostController extends Controller
 {
+    
     public function index(){
-
+    //dump($GameCreators);
     $GameCreators = [
         [
             "Name" => 'Gerard',
@@ -20,7 +23,7 @@ class PostController extends Controller
         ]
     ];
 
-    $WebDevelopers = [
+     $WebDevelopers = [
         [
         'Name'=>'Adrian Gomez',
         'Description' => 'Web developer',
@@ -30,19 +33,29 @@ class PostController extends Controller
             'Description' => 'Web developer',
         ],
     ];
-    //dump($GameCreators);
        return view('welcome', compact('GameCreators', 'WebDevelopers'));
     }
 
-    public function login(LoginRequest $request){
-        $credential = $request->validated();
+    public function login(Request $request){
+     
+        $credential = $request->only('email', 'password');
 
-        $mail = $request->old('email');
-        $password = $request->old('password');
+
+        if(Auth::attempt($credential)){
+            return redirect('welcome')->withSuccess('Signed in');
+        } else {
+            return'Loggin failed';
+        };
+
+        //return redirect()->route('/');
+        // $credential = $request->validated();
+
+        // $mail = $request->old('email');
+        // $password = $request->old('password');
         
-        $UserDb = User::all();
+        // $UserDb = User::all();
 
-        dump($mail,$password);
+        // dump($mail,$password);
 
         //return view('login');
 

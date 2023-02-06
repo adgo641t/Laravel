@@ -21,11 +21,13 @@ use App\Http\Request\LoginRequest;
 
 Route::get('/', [PostController::class, 'index'])->name('welcome');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::view('login', 'login');
 
-//Route::get('/login', [PostController::class,'login'])->name('login');
+Route::post('/login', [PostController::class,'login']);
+
+//  Route::post('login', function(){
+//      return request('email');
+//  });
 
 
 Route::get('/logout', function () {
@@ -41,5 +43,4 @@ Route::get('/register', function () {
 // });
 Route::get('/ShowGame', [PostController::class, 'ShowTable'])->name('posts.Show');;
 
-
-
+//Auth::routes();

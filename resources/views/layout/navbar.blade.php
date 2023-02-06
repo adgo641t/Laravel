@@ -21,8 +21,8 @@
         <ul class="navbar-nav ms-auto ml-auto">
             <li class="nav-item">
                 <div class="justify-content-md-center">
-                    <form class="d-flex form-inline my-2 my-lg-0 my-lg-0">
-                        <input class="form-control mr-2" type="text" placeholder="Search Anything..." aria-label="Search" style="width: 600px;">
+                    <form action="https://www.google.com/search" method="GET" class="d-flex form-inline my-2 my-lg-0 my-lg-0">
+                        <input class="form-control mr-2" type="text" placeholder="Search Anything..." aria-label="Search" id="search" name="q" style="width: 600px;">
                         <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>

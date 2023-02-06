@@ -70,14 +70,14 @@ body
                                 @csrf
                                     <div class="form-group">
                                         <label for="Email">Email address</label>
-                                        <input type="email" value="{{old('email')}}" class="form-control" id="Email" required>
+                                        <input type="email" class="form-control" id="email" name="email" required value="{{old('email')}}">
                                     </div>
                                     <div class="form-group mb-5">
                                         <label for="Password">Password</label>
-                                        <input type="password" value="{{old('password')}}" class="form-control" id="Password" required minlength="4">
+                                        <input type="password" class="form-control" name="password" id="password" value="{{old('password')}}" required>
                                     </div>
                                     <div class="row justify-content-center">
-                                        <button type="submit" class="btn btn-outline-primary">Login</button>
+                                        <input type="submit" class="btn btn-outline-primary" placeholder="Login">
                                         <a style="text-align:center" href="#l" class="forgot-link float-right text-primary">Forgot password?</a>
                                     </div>
                                 </form>
@@ -112,3 +112,15 @@ body
 </div>
     </div>
 @endsection
+
+
+<footer class="text-center text-white" style="background-color: #f1f1f1;   position: fixed;
+   bottom: 0;
+   width: 100%;">
+
+  <!-- Copyright -->
+  <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:<b> Diseñado por Adrian</b>
+  </div>
+  <!-- Copyright -->
+</footer>
