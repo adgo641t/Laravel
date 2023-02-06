@@ -3,12 +3,19 @@
 @section('title', 'Weclome Page')
  
 @section('content')
-
-<h1>Welcome to the Multijuegos Home</h1>
-<br>
-
-<h1>The Game Creators Team</h1>
-
+<div class="container">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://icebreakerideas.com/wp-content/uploads/2021/04/Pictionary-Game-e1619834659484.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://files.realpython.com/media/Build-an-AI-Game-Engine-for-Tic-Tac-Toe-in-Python_Watermarked.b90cdf84c417.jpg" alt="Second slide">
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- 
 @foreach($GameCreators as $GameCreator)
     <li>Name: {{$GameCreator['Name']}}</li>
     <li>Description: {{$GameCreator['Description']}}</li>
@@ -20,7 +27,7 @@
 @foreach($WebDevelopers as $WebDeveloper)
     <li>Name: {{$WebDeveloper['Name']}}</li>
     <li>Description: {{$WebDeveloper['Description']}}</li>
-@endforeach
+@endforeach -->
 
 @endsection
 
