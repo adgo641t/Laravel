@@ -34,6 +34,9 @@ Route::get('/logout', function () {
     return view('logout');
 });
 
+Route::view('register', 'register');
+Route::post('/register', [PostController::class,'RegisterUser']);
+
 Route::get('/register', function () {
     return view('register');
 });

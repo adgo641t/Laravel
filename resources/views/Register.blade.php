@@ -75,35 +75,33 @@
 }
 
 </style>
+<div class="container">
 <section class="get-in-touch">
    <h1 class="title">Register</h1>
-   <form class="contact-form row">
+   <form method="post" class="contact-form row">
+      @csrf
       <div class="form-field col-lg-6">
-         <input id="name" class="input-text js-input" type="text" required>
+         <input id="name" class="input-text js-input" type="text" required name="name">
          <label class="label" for="name">Name</label>
       </div>
       <div class="form-field col-lg-6 ">
-         <input id="email" class="input-text js-input" type="email" required>
+         <input id="email" class="input-text js-input" name="email" type="email" required>
          <label class="label" for="email">E-mail</label>
       </div>
       <div class="form-field col-lg-6 ">
-         <input id="password" class="input-text js-input" type="text" required>
+         <input id="password" class="input-text js-input" name="password" type="text" required>
          <label class="label" for="company">Password</label>
       </div>
       <div class="form-field col-lg-6 ">
          <input id="password" class="input-text js-input" type="text" required>
          <label class="label" for="company">Confirm Password</label>
       </div>
-      <div class="form-field col-lg-12">
-         <input id="message" class="input-text js-input" type="text" required>
-         <label class="label" for="message">Message</label>
-      </div>
-      <div class="form-field col-lg-12">
-         <input class="submit-btn" type="submit" value="Submit">
+      <div style="text-align:center" class="form-field col-lg-12">
+         <input  class="submit-btn" type="submit" value="Submit">
       </div>
    </form>
 </section>
-
+</div>
 @endsection
 
 

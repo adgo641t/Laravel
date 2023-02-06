@@ -47,18 +47,21 @@ class PostController extends Controller
             return'Loggin failed';
         };
 
-        //return redirect()->route('/');
-        // $credential = $request->validated();
 
-        // $mail = $request->old('email');
-        // $password = $request->old('password');
-        
-        // $UserDb = User::all();
+    }
 
-        // dump($mail,$password);
+    public function RegisterUser(Request $request){
+        if(User::create($request->only('name','email','password')))
+        {
+            return redirect()->route('welcome')->withSuccess('Registered');
+        } else {
+            return 'User already exists';
+        };
+    }
 
-        //return view('login');
-
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('welcome')->withSuccess('Logged out');
     }
 
     public function ShowTable(){
