@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jugadores', function (Blueprint $table) {
-            $table->id()->foreignId('id')->constrained('users');
-            $table->string('username');
-            $table->string('pword');
-            $table->string('mail')->foreignId('mail')->constrained('users');
+        Schema::create('juegos', function (Blueprint $table) {
+            $table->id();
+            $table->string('Juego');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jugadores');
+        Schema::dropIfExists('juegos');
     }
 };
