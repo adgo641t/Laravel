@@ -69,5 +69,26 @@ class PostController extends Controller
         return view('ShowGame', compact('dataTable'));
     }
 
+    public function ShowUsers(){
+        $users = User::all();
+        return view('UserTable', compact('users'));
+    }
+
+    public function EditUser($user){
+        $user = User::findOrFail($user);
+        return view('EditUser', compact('user'));
+
+    }
+
+    public function update(Request $request,$user){
+        $user = User::findOrFail($user);
+        $user->update($request->all());
+        $user->save();
+
+
+        return redirect()->route('welcome');
+
+    }
+
 
 }
