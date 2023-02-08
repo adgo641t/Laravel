@@ -44,10 +44,12 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('Show')}}">Show Game</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('ShowUsers')}}">Users</a>
+            </li>
           </ul>
         </div>
       </nav>
         @yield('content')
     </body>
 </html>
-

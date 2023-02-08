@@ -1,18 +1,16 @@
 @extends('layout.navbar')
 
-@section('title', 'Show Game Page | Multijuegos')
-
 @section('content')
 
-    <div class="container col-lg-12 col-md-6 col-sm-3" style="font-family: 'Games', sans-serif;">
+    <div class="container" style="font-family: 'Games', sans-serif;">
        <div class="row">
         <h1 style="text-align:center">Video of the game</h1>
-        <div>
-            <br>
-            <iframe style="display:block; margin-left: auto; margin-right:auto;" width="750" height="315" src="https://www.youtube.com/embed/G53bD9LRJ1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
-                <br>
+        <div class="">
+            <iframe class="d-block w-25 mx-auto ms-auto"  src="https://www.youtube.com/embed/G53bD9LRJ1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        
+        </div>
        <br>
-       <br><br>
+       <br>
+       <br>
         <h1 style="text-align: center">The Winners Table</h1>
         <br>
         <div class="table-responsive">

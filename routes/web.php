@@ -22,6 +22,7 @@ use App\Http\Request\LoginRequest;
 Route::get('/', [PostController::class, 'index'])->name('welcome');
 
 Route::view('login', 'login');
+
 Route::post('/login', [PostController::class,'login'])->name('login');
 
 
@@ -38,13 +39,20 @@ Route::view('register', 'register');
 Route::post('/register', [PostController::class,'RegisterUser'])->name('register');
 
 
-// Route::get('/register', function () {
-//     return view('register');
-// });
+Route::get('/register', function () {
+    return view('register');
+});
 
 // Route::get('/ShowGame', function () {
 //     return view('ShowGame');
 // });
-Route::get('/ShowGame', [PostController::class, 'ShowTable'])->name('Show');;
+Route::get('/ShowGame', [PostController::class, 'ShowTable'])->name('Show');
+Route::get('/ShowUsers',[PostController::class, 'ShowUsers'])->name('ShowUsers');
+Route::get('/edit/{user}',[PostController::class, 'EditUser'])->name('edit');
+Route::put('/update/{user}',[PostController::class, 'Update'])->name('update');
+Route::delete('/delete/{user}',[PostController::class, 'Delete'])->name('delete');
+
+
+
 
 //Auth::routes();

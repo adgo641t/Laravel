@@ -1,7 +1,4 @@
 @extends('layout.navbar')
-
-@section('title', 'Register | Multijuegos')
-
 @section('content')
 <style>
 
@@ -92,11 +89,11 @@
          <label class="label" for="email">E-mail</label>
       </div>
       <div class="form-field col-lg-6 ">
-         <input id="password" class="input-text js-input" name="password" type="password" required>
+         <input id="password" class="input-text js-input" name="password" type="text" required>
          <label class="label" for="company">Password</label>
       </div>
       <div class="form-field col-lg-6 ">
-         <input id="password" class="input-text js-input" type="password" required>
+         <input id="password" class="input-text js-input" type="text" required>
          <label class="label" for="company">Confirm Password</label>
       </div>
       <div style="text-align:center" class="form-field col-lg-12">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\support\Facades\Auth;
 use App\Models\ShowGame;
 use App\Models\User;
+use App\Http\Requests\LoginRequest;
 
 
 
@@ -66,6 +67,35 @@ class PostController extends Controller
     public function ShowTable(){
         $dataTable = ShowGame::all();
         return view('ShowGame', compact('dataTable'));
+    }
+
+    public function ShowUsers(){
+        $users = User::all();
+        return view('UserTable', compact('users'));
+    }
+
+    public function EditUser($user){
+        $user = User::findOrFail($user);
+        return view('EditUser', compact('user'));
+
+    }
+
+    public function update(Request $request,$user){
+        $user = User::findOrFail($user);
+        $user->update($request->all());
+        $user->save();
+
+
+        return redirect()->route('welcome');
+
+    }
+
+    public function Delete($user){
+        $user = User::findOrFail($user);
+        $user->delete();
+
+        return redirect()->route('welcome');
+
     }
 
 
