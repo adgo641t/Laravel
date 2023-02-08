@@ -90,5 +90,13 @@ class PostController extends Controller
 
     }
 
+    public function Delete($user){
+        $user = User::findOrFail($user);
+        $user->delete();
+
+        return redirect()->route('welcome');
+
+    }
+
 
 }

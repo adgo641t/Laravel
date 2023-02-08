@@ -50,6 +50,8 @@ Route::get('/ShowGame', [PostController::class, 'ShowTable'])->name('Show');
 Route::get('/ShowUsers',[PostController::class, 'ShowUsers'])->name('ShowUsers');
 Route::get('/edit/{user}',[PostController::class, 'EditUser'])->name('edit');
 Route::put('/update/{user}',[PostController::class, 'Update'])->name('update');
+Route::delete('/delete/{user}',[PostController::class, 'Delete'])->name('delete');
+
 
 
 

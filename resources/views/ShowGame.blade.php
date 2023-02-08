@@ -5,11 +5,9 @@
     <div class="container" style="font-family: 'Games', sans-serif;">
        <div class="row">
         <h1 style="text-align:center">Video of the game</h1>
-        <div class="embed-responsive embed-responsive-16by9">
-            <br>
-            <iframe class="embed-responsive-item" style="display:block; margin-left: auto; margin-right:auto;"  width="715" height="315" src="https://www.youtube.com/embed/G53bD9LRJ1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        
-            </div>
-            <br>
+        <div class="">
+            <iframe class="d-block w-25 mx-auto ms-auto"  src="https://www.youtube.com/embed/G53bD9LRJ1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        
+        </div>
        <br>
        <br>
        <br>
