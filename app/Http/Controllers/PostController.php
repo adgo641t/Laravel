@@ -16,24 +16,6 @@ class PostController extends Controller
     
     public function index(){
     //dump($GameCreators);
-    $GameCreators = [
-        [
-            "Name" => 'Gerard',
-            "Description" => 'Game developer'
-        ]
-    ];
-
-     $WebDevelopers = [
-        [
-        'Name'=>'Adrian Gomez',
-        'Description' => 'Web developer',
-        ],
-        [
-            'Name'=>'Pau Saigner',
-            'Description' => 'Web developer',
-        ],
-    ];
-       return view('welcome', compact('GameCreators', 'WebDevelopers'));
     }
 
     public function login(Request $request){
@@ -64,15 +46,6 @@ class PostController extends Controller
         return redirect()->route('welcome')->withSuccess('Logged out');
     }
 
-    public function ShowTable(){
-        $dataTable = ShowGame::all();
-        return view('ShowGame', compact('dataTable'));
-    }
-
-    public function ShowUsers(){
-        $users = User::all();
-        return view('UserTable', compact('users'));
-    }
 
     public function EditUser($user){
         $user = User::findOrFail($user);
