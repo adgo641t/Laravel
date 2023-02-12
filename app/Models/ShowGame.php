@@ -11,4 +11,7 @@ class ShowGame extends Model
 
     protected $table = 'partidas';
   
+    public function juego() {
+        //return $this->
+    }
 }

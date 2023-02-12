@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('partidas', function (Blueprint $table) {
             $table->id();
-            $table->integer('juego')->foreignId('Juego')->constrained('juegos');
+            $table->integer('juego');
             $table->integer('jugadores');
             $table->date('fecha');
             $table->string('hora');
