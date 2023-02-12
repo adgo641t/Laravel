@@ -11,7 +11,7 @@ use App\Http\Requests\LoginRequest;
 
 
 
-class PostController extends Controller
+class DBController extends Controller
 {
     
     public function index(){

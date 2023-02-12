@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Request\LoginRequest;
+use App\Http\Controllers\DBController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,40 +19,23 @@ use App\Http\Request\LoginRequest;
 |
 */
 
-Route::get('/', [PostController::class, 'index'])->name('welcome');
 
-Route::view('login', 'login');
-
-Route::post('/login', [PostController::class,'login'])->name('login');
-
-
-//  Route::post('login', function(){
-//      return request('email');
-//  });
-
-
-Route::get('/logout', function () {
-    return view('logout');
-});
-
-Route::view('register', 'register');
-Route::post('/register', [PostController::class,'RegisterUser'])->name('register');
+//** GETS */
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/register', [HomeController::class, 'register'])->name('register');
+Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::get('/ShowGame', [HomeController::class, 'ShowTable'])->name('Show');
+Route::get('/ShowUsers',[HomeController::class, 'ShowUsers'])->name('ShowUsers');
+Route::get('/logout', [DBController::class, 'logout']);
+Route::get('/edit/{user}',[DBController::class, 'EditUser'])->name('edit');
 
 
-Route::get('/register', function () {
-    return view('register');
-});
+//** POSTS */
+Route::post('/login', [DBController::class,'login'])->name('login');
+Route::post('/register', [DBController::class,'register'])->name('register');
 
-// Route::get('/ShowGame', function () {
-//     return view('ShowGame');
-// });
-Route::get('/ShowGame', [PostController::class, 'ShowTable'])->name('Show');
-Route::get('/ShowUsers',[PostController::class, 'ShowUsers'])->name('ShowUsers');
-Route::get('/edit/{user}',[PostController::class, 'EditUser'])->name('edit');
-Route::put('/update/{user}',[PostController::class, 'Update'])->name('update');
-Route::delete('/delete/{user}',[PostController::class, 'Delete'])->name('delete');
+//** PUTS */
+Route::put('/update/{user}',[DBController::class, 'Update'])->name('update');
 
-
-
-
-//Auth::routes();
+//** DELETE */
+Route::delete('/delete/{user}',[DBController::class, 'Delete'])->name('delete');
