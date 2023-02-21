@@ -24,16 +24,16 @@ use App\Http\Controllers\HomeController;
 //** GETS */
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
-Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::view('/login', 'login')->name('login');
 Route::get('/ShowGame', [HomeController::class, 'ShowTable'])->name('Show');
-Route::get('/ShowUsers',[HomeController::class, 'ShowUsers'])->name('ShowUsers');
+Route::get('/ShowUsers',[HomeController::class, 'ShowUsers'])->middleware('auth')->name('ShowUsers');
 Route::get('/logout', [PostController::class, 'logout']);
 Route::get('/edit/{user}',[PostController::class, 'EditUser'])->name('edit');
 
 
 //** POSTS */
 Route::post('/login', [PostController::class,'login'])->name('login');
-Route::post('/register', [PostController::class,'register'])->name('register');
+Route::post('/register', [PostController::class,'RegisterUser'])->name('register');
 
 //** PUTS */
 Route::put('/update/{user}',[PostController::class, 'Update'])->name('update');

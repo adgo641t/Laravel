@@ -35,9 +35,16 @@
             <li class="nav-item active">
               <a class="nav-link" href="{{route('welcome')}}">Home <span class="sr-only">(current)</span></a>
             </li>
+            @guest
             <li class="nav-item">
               <a class="nav-link" href="{{route('login')}}">Login</a>
             </li>
+            @endguest
+            @auth
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url("logout") }}">logout</a>
+                </li>
+            @endauth
             <li class="nav-item">
               <a class="nav-link" href="{{route('register')}}">Register</a>
             </li>

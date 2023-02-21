@@ -70,11 +70,11 @@ body
                                 @csrf
                                     <div class="form-group">
                                         <label for="Email">Email address</label>
-                                        <input type="email" class="form-control" id="email" name="email" required value="{{old('email')}}">
+                                        <input type="email" class="form-control" name="email" required value="{{old('email')}}">
                                     </div>
                                     <div class="form-group mb-5">
                                         <label for="Password">Password</label>
-                                        <input type="password" class="form-control" name="password" id="password" value="{{old('password')}}" required>
+                                        <input type="password" class="form-control" name="password" value="{{old('password')}}" required>
                                     </div>
                                     <div class="row justify-content-center">
                                         <input type="submit" class="btn btn-outline-primary" placeholder="Login">

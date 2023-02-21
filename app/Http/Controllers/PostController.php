@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\support\Facades\Auth;
-use App\Models\ShowGame;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use App\Http\Requests\LoginRequest;
 
 
 
@@ -20,11 +19,14 @@ class PostController extends Controller
 
     public function login(Request $request){
      
-        $credential = $request->only('email', 'password');
-
+        $credential = [
+            "email" => $request->email,
+            "password" => $request->password
+        ];
 
         if(Auth::attempt($credential)){
-            return redirect('welcome')->withSuccess('Signed in');
+            $request->session()->regenerate();
+            return redirect()->intended(route('welcome'));
         } else {
             return'Loggin failed';
         };
@@ -33,12 +35,18 @@ class PostController extends Controller
     }
 
     public function RegisterUser(Request $request){
-        if(User::create($request->only('name','email','password')))
-        {
-            return redirect()->route('welcome')->withSuccess('Registered');
-        } else {
-            return 'User already exists';
-        };
+        
+        $user = new User();
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        Auth::login($user);
+
+        return redirect()->intended(route('welcome'));
     }
 
     public function logout(){
