@@ -35,6 +35,12 @@ class PostController extends Controller
     }
 
     public function RegisterUser(Request $request){
+
+        $request->validate([
+            'name' => ['required','string','max:50'],
+            'password' => ['required','string','max:50'],
+            'email' => ['required','email','max:120']
+        ]);
         
         $user = new User();
 

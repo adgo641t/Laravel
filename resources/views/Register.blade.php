@@ -81,17 +81,27 @@
    <form method="post" class="contact-form row">
       @csrf
       <div class="form-field col-lg-6">
-         <input id="name" class="input-text js-input" type="text" required name="name">
+         <input id="name" class="input-text js-input" type="text"  name="name" value="{{old('name')}}">
          <label class="label" for="name">Name</label>
-      </div>
+        @error('name')
+          <small style="color: red;">{{$message}}</small>
+        @enderror
+        </div>
       <div class="form-field col-lg-6 ">
-         <input id="email" class="input-text js-input" name="email" type="email" required>
-         <label class="label" for="email">E-mail</label>
-      </div>
+      <label class="label" for="email">E-mail</label>
+      <input id="email" class="input-text js-input" name="email" type="text"  value="{{old('email')}}">
+        
+         @error('email')
+          <small style="color: red;">{{$message}}</small>
+        @enderror
+        </div>
       <div class="form-field col-lg-6 ">
-         <input id="password" class="input-text js-input" name="password" type="text" required>
+         <input id="password" class="input-text js-input" name="password" type="text"  value="{{old('password')}}">
          <label class="label" for="company">Password</label>
-      </div>
+         @error('password')
+          <small style="color: red;">{{$message}}</small>
+        @enderror
+        </div>
       <div class="form-field col-lg-6 ">
          <input id="password" class="input-text js-input" type="text" required>
          <label class="label" for="company">Confirm Password</label>
