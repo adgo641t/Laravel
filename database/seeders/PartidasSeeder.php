@@ -16,7 +16,7 @@ class PartidasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('partidas')->truncate();
+        //DB::table('partidas')->truncate();
         DB::table('partidas')->insert([
             [
                 'id' => 1,

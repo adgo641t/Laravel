@@ -16,9 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Schema::dropIfExists('users');
-
-        
+                
         DB::table('users')->insert([
             [
                 'id'       => 1,

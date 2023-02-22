@@ -20,63 +20,63 @@ class RegistroSeeder extends Seeder
 
         DB::table('registro')->insert([
             [
-                'id_i' => 1,
+                'id_j' => 1,
                 'id_p' => 1,
             ],
             [
-                'id_i' => 2,
+                'id_j' => 2,
                 'id_p' => 1,
             ],
             [
-                'id_i' => 1,
+                'id_j' => 1,
                 'id_p' => 4,
             ],
             [
-                'id_i' => 1,
+                'id_j' => 1,
                 'id_p' => 2,
             ],
             [
-                'id_i' => 2,
+                'id_j' => 2,
                 'id_p' => 2,
             ],
             [
-                'id_i' => 5,
+                'id_j' => 5,
                 'id_p' => 2,
             ],
             [
-                'id_i' => 6,
+                'id_j' => 6,
                 'id_p' => 2,
             ],
             [
-                'id_i' => 2,
+                'id_j' => 2,
                 'id_p' => 3,
             ],
             [
-                'id_i' => 3,
+                'id_j' => 3,
                 'id_p' => 3,
             ],
             [
-                'id_i' => 4,
+                'id_j' => 4,
                 'id_p' => 3,
             ],
             [
-                'id_i' => 1,
+                'id_j' => 1,
                 'id_p' => 4,
             ],
             [
-                'id_i' => 4,
+                'id_j' => 4,
                 'id_p' => 4,
             ],
             [
-                'id_i' => 6,
+                'id_j' => 6,
                 'id_p' => 4,
             ],
             [
-                'id_i' => 2,
+                'id_j' => 2,
                 'id_p' => 5,
             ],
             [
-                'id_i' => 3,
+                'id_j' => 3,
                 'id_p' => 5,
             ],
 

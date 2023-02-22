@@ -16,7 +16,7 @@ class JugadoresSeeder extends Seeder
     public function run()
     {
 
-        DB::table('jugadores')->truncate();
+        //DB::table('jugadores')->truncate();
         
         DB::table('jugadores')->insert([
             [
