@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('partidas');
         Schema::create('partidas', function (Blueprint $table) {
             $table->id();
             $table->integer('juego')->foreignId('Juego')->constrained('juegos');

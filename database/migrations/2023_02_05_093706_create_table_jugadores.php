@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('jugadores');
         Schema::create('jugadores', function (Blueprint $table) {
-            $table->id()->foreignId('id')->constrained('users');
+            $table->id();
             $table->string('username');
             $table->string('pword');
             $table->string('mail')->foreignId('mail')->constrained('users');

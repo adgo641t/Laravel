@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('palabras');
         Schema::create('palabras', function (Blueprint $table) {
             $table->string('palabra');
             $table->timestamps();

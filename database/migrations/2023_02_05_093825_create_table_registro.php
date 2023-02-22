@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('registro');
         Schema::create('registro', function (Blueprint $table) {
-            $table->integer('id_i');
-            $table->integer('id_p');
+            $table->foreignId('id_j')->references('id')->on('jugadores');
+            $table->foreignId('id_p')->references('id')->on('partidas');
             $table->timestamps();
         });
     }

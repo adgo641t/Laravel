@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\DbController;
 use App\Http\Controllers\HomeController;
 
 
@@ -27,19 +27,19 @@ Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::view('/login', 'login')->name('login');
 Route::get('/ShowGame', [HomeController::class, 'ShowTable'])->name('Show');
 Route::get('/ShowUsers',[HomeController::class, 'ShowUsers'])->middleware('auth')->name('ShowUsers');
-Route::get('/logout', [PostController::class, 'logout']);
-Route::get('/edit/{user}',[PostController::class, 'EditUser'])->name('edit');
+Route::get('/logout', [DbController::class, 'logout']);
+Route::get('/edit/{user}',[DbController::class, 'EditUser'])->name('edit');
 
 
 //** POSTS */
-Route::post('/login', [PostController::class,'login'])->name('login');
-Route::post('/register', [PostController::class,'RegisterUser'])->name('register');
+Route::post('/login', [DbController::class,'login'])->name('login');
+Route::post('/register', [DbController::class,'RegisterUser'])->name('register');
 
 //** PUTS */
-Route::put('/update/{user}',[PostController::class, 'Update'])->name('update');
+Route::put('/update/{user}',[DbController::class, 'Update'])->name('update');
 
 //** DELETE */
-Route::delete('/delete/{user}',[PostController::class, 'Delete'])->name('delete');
+Route::delete('/delete/{user}',[DbController::class, 'Delete'])->name('delete');
 
 
 
